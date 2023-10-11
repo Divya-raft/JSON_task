@@ -1,0 +1,26 @@
+{
+  "locations": [
+    {
+      "id": 1,
+      "name": "Namakkal,Tamilnadu",
+      "type": "Town",
+      "description": "Very clam town with many temples to visit",
+      "famousfor": "Egg , Hanuman temple",
+      "temp": ""
+    },
+    {
+      "id": 2,
+      "name": "Mumbai",
+      "type": "City",
+      "description": "One of the best place to work in IT industry",
+      "famousfor": "Taj Mahal hotel"
+    },
+    {
+      "id": 3,
+      "name": "Agra",
+      "type": "City",
+      "description": "Capital of Delhi",
+      "famousfor": "Taj Mahal"
+    }
+  ]
+}

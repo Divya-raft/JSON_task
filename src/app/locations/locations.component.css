@@ -1,0 +1,63 @@
+/* Style for the Add Location button */
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+}
+
+/* Style for the Edit and Delete buttons */
+.btn-primary, .btn-danger {
+    color: #fff;
+    transition: all 0.2s;
+}
+
+.btn-info:hover,.btn-success:hover,.btn-primary:hover, .btn-danger:hover {
+    transform: scale(1.05);
+}
+
+/* Style for the table */
+.table {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the modal */
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.modal-header button.close {
+    color: #fff;
+}
+
+.modal-footer button.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+/* Style for the "No location data available" alert */
+.alert-info {
+    background-color: #17a2b8;
+    color: #fff;
+    border: none;
+}
+
+.alert-info a {
+    color: #fff;
+}
+
+.alert-info a:hover {
+    text-decoration: underline;
+}
+
+/* Hover effect for table rows */
+.table tbody tr:hover {
+    background-color: #f5f5f5;
+}

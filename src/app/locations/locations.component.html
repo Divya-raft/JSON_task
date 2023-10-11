@@ -1,0 +1,81 @@
+
+<div class="container">
+    <nav class="navbar navbar-light">
+        <div class="container-fluid">
+            <div class="d-flex">
+                <button (click)="clickAdd()" class="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Add location</button>
+            </div>
+        </div>
+    </nav>
+
+    <div *ngIf="locationData && locationData.length > 0; else noLocations">
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Famous for</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of locationData">
+                    <td>{{i.id}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.type}}</td>
+                    <td>{{i.description}}</td>
+                    <td>{{i.famousfor}}</td>
+                    <td>
+                        <button (click)="onEdit(i)" class="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
+                        <button (click)="deleteLocations(i)" class="btn btn-danger mx-3">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <ng-template #noLocations>
+        <div class="alert alert-info">No location data available</div>
+    </ng-template>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Location details</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formValue">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Location Name</label>
+                            <input type="text" formControlName="name" class="form-control" id="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="type" class="form-label">Location type</label>
+                            <input type="text" formControlName="type" class="form-control" id="type">
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <input type="text" formControlName="description" class="form-control" id="description">
+                        </div>
+                        <div class="mb-3">
+                            <label for="famousfor" class="form-label">Famous for</label>
+                            <input type="text" formControlName="famousfor" class="form-control" id="famousfor">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button *ngIf="showAdd" type="button" (click)="postLocationDetails()" class="btn btn-primary">Add location</button>
+                    <button *ngIf="showUpdate" type="button" (click)="updateLocation()" class="btn btn-primary">Update location</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
